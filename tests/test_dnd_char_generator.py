@@ -1,5 +1,6 @@
-from dnd_char_generator import __version__
+def func(x):
+    return x + 1
 
 
-def test_version():
-    assert __version__ == '0.1.0'
+def test_answer():
+    assert func(3) == 4

@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
+import math
 import random
 from typing import cast
 
@@ -13,17 +14,18 @@ class AbillityType(Enum):
 
 @dataclass
 class Abillity:
-    def __init__(self) -> None:
-        self.score: int = self.generate_score()
 
-    def __init(self, score: int):
-        self.score = score
+    def __init__(self, score: int = None) -> None:
+        if not score:
+            self.score: int = self.generate_score()
+        else:
+            self.score = score
 
     @property
     def modifier(self) -> int:
         modifier_value = (self.score - 10) / 2
 
-        return int(modifier_value)
+        return math.floor(modifier_value)
 
     def generate_score(self, handicap: int = 1) -> int:
         num_of_dice = 3 + handicap

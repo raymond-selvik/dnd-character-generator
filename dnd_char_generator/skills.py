@@ -4,7 +4,7 @@ from enum import Enum
 from re import M
 from typing import NamedTuple, Tuple
 
-from abillity import AbillityType
+from dnd_char_generator.abillity import AbillityType
 
 @dataclass
 class Skill:
